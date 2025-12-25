@@ -44,27 +44,11 @@ Kami menggunakan dua metode reduksi dimensi, yaitu **PCA (Principal Component An
 ## Analisis Hasil Visualisasi
 
 ### 1. Hasil PCA (Linear)
-### Gambaran Umum
-Hasil penerapan **Principal Component Analysis (PCA)** menunjukkan bahwa data memiliki pola penyebaran yang cenderung memanjang secara linear pada ruang dua dimensi. Hal ini mengindikasikan bahwa sebagian besar variasi data dapat dijelaskan melalui kombinasi linier dari fitur-fitur asli. Distribusi ini mencerminkan karakteristik PCA sebagai metode reduksi dimensi yang berfokus pada pemaksimalan variansi global tanpa mempertimbangkan label kelas.
-
-### Pemisahan Kelas
-Berdasarkan visualisasi PCA, kelas tumor **Ganas** dan **Jinak** mulai menunjukkan pemisahan yang cukup jelas. Kedua kelas tersebut cenderung terdistribusi pada sisi kiri dan kanan bidang PCA. Kondisi ini menunjukkan bahwa dua komponen utama yang digunakan telah mampu menangkap perbedaan karakteristik utama antara kedua kelas, meskipun PCA bukan metode yang secara khusus dirancang untuk klasifikasi.
-
-### Overlap Data
-Meskipun pemisahan kelas sudah terlihat, masih terdapat area tumpang tindih (*overlap*) yang cukup signifikan di sekitar batas pertemuan kedua kelas. Hal ini menandakan adanya beberapa sampel dengan karakteristik yang saling menyerupai sehingga tidak dapat dipisahkan secara sempurna melalui proyeksi linear. Overlap ini merupakan hal yang wajar karena PCA tidak memanfaatkan informasi label kelas.
-
-### Informasi Variansi
-Secara kuantitatif, dua komponen utama PCA mampu mempertahankan sekitar **63% variansi data asli**. Nilai ini menunjukkan bahwa sebagian besar informasi penting telah berhasil direpresentasikan dalam dimensi yang lebih rendah. Namun, masih terdapat sekitar 37% variansi yang tidak terwakili, yang kemungkinan mengandung pola non-linear atau informasi tambahan yang relevan untuk pemisahan kelas.
-
-### Kesimpulan
-PCA efektif digunakan sebagai tahap awal eksplorasi data dan visualisasi untuk memahami struktur dan distribusi data. Namun, untuk memperoleh pemisahan yang lebih optimal antara tumor ganas dan jinak, diperlukan metode lanjutan seperti reduksi dimensi non-linear atau algoritma klasifikasi yang mampu menangkap hubungan kompleks antar fitur.
+Hasil visualisasi data menggunakan Principal Component Analysis (PCA) menunjukkan bahwa penyebaran data membentuk pola yang cenderung memanjang secara linear. Hal ini mencerminkan sifat dasar PCA yang mereduksi dimensi dengan mempertahankan hubungan linear antar fitur. Pada proyeksi dua komponen utama, kelas tumor Ganas dan Jinak sudah mulai terlihat terpisah, di mana masing-masing kelompok cenderung berada pada sisi yang berbeda dari ruang fitur hasil transformasi. Meskipun demikian, masih ditemukan area tumpang tindih di sekitar batas pemisahan kedua kelas. Tumpang tindih ini menunjukkan bahwa terdapat sejumlah data dengan karakteristik yang mirip secara linear, sehingga sulit dipisahkan secara sempurna menggunakan pendekatan PCA saja. Namun, kelebihan utama PCA terletak pada kemampuannya dalam mempertahankan informasi penting dari data asli. Dalam hal ini, sekitar 63% variansi data berhasil dipertahankan hanya dengan dua komponen utama, sehingga representasi data yang dihasilkan masih cukup informatif untuk analisis awal dan eksplorasi pola global.
 
 
 ### 2. Hasil t-SNE (Non-Linear)
-* **Observasi:** Visualisasi t-SNE menunjukkan hasil yang sangat berbeda dan lebih "ekstrem".
-* **Pemisahan:** Terbentuk dua **cluster (pulau)** besar yang terpisah sangat jelas dan jauh antara pasien tumor Ganas dan Jinak.
-* **Keunggulan:** Hampir tidak ada data yang tumpang tindih. Pasien dengan karakteristik tumor yang mirip berkumpul sangat rapat.
-
+Berbeda dengan PCA, hasil visualisasi menggunakan t-Distributed Stochastic Neighbor Embedding (t-SNE) memperlihatkan pemetaan data yang jauh lebih kontras dan non-linear. Data terdistribusi membentuk dua cluster besar yang terpisah secara sangat jelas antara pasien dengan tumor Ganas dan Jinak. Pola ini menunjukkan bahwa t-SNE mampu menangkap struktur lokal dan hubungan non-linear antar data dengan sangat baik. Hampir tidak terdapat tumpang tindih antar kelas, yang menandakan bahwa data dengan karakteristik tumor yang serupa dikelompokkan secara rapat dalam satu cluster yang sama. Jarak yang jauh antar cluster menggambarkan perbedaan karakteristik yang signifikan antara kedua kelas tumor. Hasil ini menegaskan keunggulan t-SNE dalam visualisasi dan eksplorasi pemisahan kelas, meskipun metode ini lebih difokuskan pada representasi struktur lokal daripada interpretasi variansi global seperti pada PCA.
 ---
 
 ## Kesimpulan Akhir
