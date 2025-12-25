@@ -49,6 +49,7 @@ Hasil visualisasi data menggunakan Principal Component Analysis (PCA) menunjukka
 
 ### 2. Hasil t-SNE (Non-Linear)
 Berbeda dengan PCA, hasil visualisasi menggunakan t-Distributed Stochastic Neighbor Embedding (t-SNE) memperlihatkan pemetaan data yang jauh lebih kontras dan non-linear. Data terdistribusi membentuk dua cluster besar yang terpisah secara sangat jelas antara pasien dengan tumor Ganas dan Jinak. Pola ini menunjukkan bahwa t-SNE mampu menangkap struktur lokal dan hubungan non-linear antar data dengan sangat baik. Hampir tidak terdapat tumpang tindih antar kelas, yang menandakan bahwa data dengan karakteristik tumor yang serupa dikelompokkan secara rapat dalam satu cluster yang sama. Jarak yang jauh antar cluster menggambarkan perbedaan karakteristik yang signifikan antara kedua kelas tumor. Hasil ini menegaskan keunggulan t-SNE dalam visualisasi dan eksplorasi pemisahan kelas, meskipun metode ini lebih difokuskan pada representasi struktur lokal daripada interpretasi variansi global seperti pada PCA.
+
 ---
 
 ## Kesimpulan Akhir
