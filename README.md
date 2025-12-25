@@ -44,10 +44,21 @@ Kami menggunakan dua metode reduksi dimensi, yaitu **PCA (Principal Component An
 ## Analisis Hasil Visualisasi
 
 ### 1. Hasil PCA (Linear)
-* **Observasi:** Visualisasi PCA menunjukkan pola penyebaran data yang memanjang (linear).
-* **Pemisahan:** Kelompok tumor Ganas dan Jinak sudah terlihat terpisah di sisi kiri dan kanan.
-* **Kekurangan:** Masih terdapat **area tumpang tindih (*overlap*)** yang cukup terlihat di perbatasan antara kedua kelas. Ini wajar karena PCA hanya melakukan proyeksi linear.
-* **Informasi Terjaga:** Sekitar **63%** informasi (variansi) data asli dapat dipertahankan dalam 2 komponen utama.
+### Gambaran Umum
+Hasil penerapan **Principal Component Analysis (PCA)** menunjukkan bahwa data memiliki pola penyebaran yang cenderung memanjang secara linear pada ruang dua dimensi. Hal ini mengindikasikan bahwa sebagian besar variasi data dapat dijelaskan melalui kombinasi linier dari fitur-fitur asli. Distribusi ini mencerminkan karakteristik PCA sebagai metode reduksi dimensi yang berfokus pada pemaksimalan variansi global tanpa mempertimbangkan label kelas.
+
+### Pemisahan Kelas
+Berdasarkan visualisasi PCA, kelas tumor **Ganas** dan **Jinak** mulai menunjukkan pemisahan yang cukup jelas. Kedua kelas tersebut cenderung terdistribusi pada sisi kiri dan kanan bidang PCA. Kondisi ini menunjukkan bahwa dua komponen utama yang digunakan telah mampu menangkap perbedaan karakteristik utama antara kedua kelas, meskipun PCA bukan metode yang secara khusus dirancang untuk klasifikasi.
+
+### Overlap Data
+Meskipun pemisahan kelas sudah terlihat, masih terdapat area tumpang tindih (*overlap*) yang cukup signifikan di sekitar batas pertemuan kedua kelas. Hal ini menandakan adanya beberapa sampel dengan karakteristik yang saling menyerupai sehingga tidak dapat dipisahkan secara sempurna melalui proyeksi linear. Overlap ini merupakan hal yang wajar karena PCA tidak memanfaatkan informasi label kelas.
+
+### Informasi Variansi
+Secara kuantitatif, dua komponen utama PCA mampu mempertahankan sekitar **63% variansi data asli**. Nilai ini menunjukkan bahwa sebagian besar informasi penting telah berhasil direpresentasikan dalam dimensi yang lebih rendah. Namun, masih terdapat sekitar 37% variansi yang tidak terwakili, yang kemungkinan mengandung pola non-linear atau informasi tambahan yang relevan untuk pemisahan kelas.
+
+### Kesimpulan
+PCA efektif digunakan sebagai tahap awal eksplorasi data dan visualisasi untuk memahami struktur dan distribusi data. Namun, untuk memperoleh pemisahan yang lebih optimal antara tumor ganas dan jinak, diperlukan metode lanjutan seperti reduksi dimensi non-linear atau algoritma klasifikasi yang mampu menangkap hubungan kompleks antar fitur.
+
 
 ### 2. Hasil t-SNE (Non-Linear)
 * **Observasi:** Visualisasi t-SNE menunjukkan hasil yang sangat berbeda dan lebih "ekstrem".
